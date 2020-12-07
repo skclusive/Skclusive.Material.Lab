@@ -1,0 +1,72 @@
+﻿@namespace Skclusive.Material.Alert
+@inherits MaterialComponent
+
+<Paper
+    RootRef="@RootRef"
+    Tag="@Component"
+    Class="@_Class"
+    Style="@_Style"
+    Square
+    Elevation="0"
+    OnClick="@HandleClickAsync"
+    OnClickStop="@OnClickStop"
+    OnClickPrevent="@OnClickPrevent"
+    Role="@_Role"
+    @attributes="Attributes">
+    @if (ShowIcon)
+    {
+        <div
+            class="@_IconClass"
+            style="@_IconStyle">
+            @if (HasIcon)
+            {
+                @IconContent
+            }
+            else if (Severity == AlertSeverity.Success)
+            {
+                <SuccessOutlinedIcon FontSize="@FontSize.Inherit" />
+            }
+            else if (Severity == AlertSeverity.Error)
+            {
+                <ErrorOutlinedIcon FontSize="@FontSize.Inherit" />
+            }
+            else if (Severity == AlertSeverity.Info)
+            {
+                <InfoOutlinedIcon FontSize="@FontSize.Inherit" />
+            }
+            else if (Severity == AlertSeverity.Warning)
+            {
+                <ReportProblemOutlinedIcon FontSize="@FontSize.Inherit" />
+            }
+        </div>
+    }
+    <div
+        class="@_MessageClass"
+        style="@_MessageStyle">
+        @ChildContent
+    </div>
+    @if (HasAction)
+    {
+        <div
+            class="@_ActionClass"
+            style="@_ActionStyle">
+            @ActionContent
+        </div>
+    }
+    @if (HasClose)
+    {
+        <div
+            class="@_ActionClass"
+            style="@_ActionStyle">
+            <IconButton
+                Size="@IconButtonSize.Small"
+                aria-label="@CloseText"
+                Title="@CloseText"
+                Color="@Color.Inherit"
+                OnClick="@OnClose">
+                <CloseIcon
+                    FontSize="@FontSize.Small" />
+            </IconButton>
+        </div>
+    }
+</Paper>

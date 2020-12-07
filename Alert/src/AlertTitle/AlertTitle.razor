@@ -1,0 +1,15 @@
+﻿@namespace Skclusive.Material.Alert
+@inherits MaterialComponent
+
+<Typography
+    RootRef="@RootRef"
+    Component="@Component"
+    GutterBottom="true"
+    Class="@_Class"
+    Style="@_Style"
+    OnClick="@HandleClickAsync"
+    OnClickStop="@OnClickStop"
+    OnClickPrevent="@OnClickPrevent"
+    @attributes="Attributes">
+    @ChildContent
+</Typography>
