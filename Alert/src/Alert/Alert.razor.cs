@@ -54,7 +54,7 @@ namespace Skclusive.Material.Alert
         /// The severity of the alert. This defines the color and icon used.
         /// </summary>
         [Parameter]
-        public AlertSeverity Severity { set; get; } = AlertSeverity.Success;
+        public Severity Severity { set; get; } = Severity.Success;
 
         /// <summary>
         /// The variant to use.
@@ -98,7 +98,7 @@ namespace Skclusive.Material.Alert
         [Parameter]
         public string ActionClass { set; get; }
 
-        protected string _Role => _Role ?? "alert";
+        protected string _Role => Role ?? "alert";
 
         protected bool HasAction => ActionContent != null;
 
