@@ -57,43 +57,49 @@ namespace Skclusive.Material.Alert
         public Severity Severity { set; get; } = Severity.Success;
 
         /// <summary>
+        /// The <see cref="Skclusive.Core.Component.Color" /> of the component. It supports those theme colors that make sense for this component.
+        /// </summary>
+        [Parameter]
+        public Color Color { set; get; } = Color.Default;
+
+        /// <summary>
         /// The variant to use.
         /// </summary>
         [Parameter]
         public AlertVariant Variant { set; get; } = AlertVariant.Standard;
 
         /// <summary>
-        /// <c>style</c> applied on the <c>img</c> element.
+        /// <c>style</c> applied on the <c>icon</c> element.
         /// </summary>
         [Parameter]
         public string IconStyle { set; get; }
 
         /// <summary>
-        /// <c>class</c> applied on the <c>img</c> element.
+        /// <c>class</c> applied on the <c>icon</c> element.
         /// </summary>
         [Parameter]
         public string IconClass { set; get; }
 
         /// <summary>
-        /// <c>style</c> applied on the <c>img</c> element.
+        /// <c>style</c> applied on the <c>message</c> element.
         /// </summary>
         [Parameter]
         public string MessageStyle { set; get; }
 
         /// <summary>
-        /// <c>class</c> applied on the <c>img</c> element.
+        /// <c>class</c> applied on the <c>message</c> element.
         /// </summary>
         [Parameter]
         public string MessageClass { set; get; }
 
         /// <summary>
-        /// <c>style</c> applied on the <c>img</c> element.
+        /// <c>style</c> applied on the <c>action</c> element.
         /// </summary>
         [Parameter]
         public string ActionStyle { set; get; }
 
         /// <summary>
-        /// <c>class</c> applied on the <c>img</c> element.
+        /// <c>class</c> applied on the <c>action</c> element.
         /// </summary>
         [Parameter]
         public string ActionClass { set; get; }
@@ -117,7 +123,14 @@ namespace Skclusive.Material.Alert
 
                 yield return $"{Variant}";
 
-                yield return $"{Variant}-{Severity}";
+                if (Color != Color.Default)
+                {
+                    yield return $"{Variant}-{Color}";
+                }
+                else
+                {
+                    yield return $"{Variant}-{Severity}";
+                }
             }
         }
 
