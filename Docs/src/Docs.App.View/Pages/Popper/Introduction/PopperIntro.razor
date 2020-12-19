@@ -1,0 +1,27 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+---
+title: Popper Blazor component
+components: Grow, Popper
+---
+
+# Popper
+
+<p class=""description"">A Popper can be used to display some content on top of another.</p>
+
+Things to know when using the `Popper` component:
+
+- 🕷 Popper relies on the 3rd party library ([Popper.js](https://github.com/popperjs/popper-core)) for perfect positioning.
+- 💄 It's an alternative API to react-popper. It aims for simplicity.
+- 📦 [8 kB gzipped](/size-snapshot).
+- The children is [`Portal`](/components/portal/) to the body of the document to avoid rendering problems.
+  You can disable this behavior with `disablePortal`.
+- The scroll isn't blocked like with the [`Popover`](/components/popover/) component.
+  The alignment of the popper updates with the available area in the viewport.
+- Clicking away does not hide the `Popper` component.
+  If you need this behavior, you can use [`ClickAwayListener`](/components/click-away-listener/) - see the example in the [menu documentation section](/components/menus/#menulist-composition).
+- The `anchorEl` is passed as the reference object to create a new `Popper.js` instance.
+
+")" />

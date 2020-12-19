@@ -1,0 +1,28 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div
+    style="position: relative">
+    <Tooltip
+        Title="Delete">
+        <IconButton
+            aria-label="delete">
+            <DeleteIcon />
+        </IconButton>
+    </Tooltip>
+    <Tooltip
+        Title="Add" aria-label="add">
+        <Fab
+            Color="@Color.Primary"
+            Style="margin: calc(var(--theme-spacing) * 2px);">
+            <AddIcon />
+        </Fab>
+    </Tooltip>
+    <Tooltip
+        Title="Add" aria-label="add">
+        <Fab
+            Color="@Color.Secondary"
+            Style="position: absolute; bottom: calc(var(--theme-spacing) * 2px); right: margin: calc(var(--theme-spacing) * 3px);">
+            <AddIcon />
+        </Fab>
+    </Tooltip>
+</div>

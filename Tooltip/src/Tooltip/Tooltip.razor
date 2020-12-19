@@ -1,0 +1,62 @@
+﻿@namespace Skclusive.Material.Tooltip
+@inherits MaterialComponent
+
+<Component
+    Tag="@Component"
+    OnTouchStart="HandleTouchStartAsync"
+    OnTouchEnd="HandleTouchEndAsync"
+    OnMouseEnter="HandleMouseEnterAsync"
+    OnMouseLeave="HandleMouseLeaveAsync"
+    OnFocus="HandleFocusAsync"
+    OnBlur="HandleBlurAsync"
+    RootRef="@AnchorRef"
+    Class="@_Class"
+    Style="@_Style"
+    @attributes="Attributes">
+    @ChildContent
+</Component>
+<Popper
+    AnchorRef="@AnchorRef"
+    Alignment="@Alignment"
+    Open="@Open"
+    Transition
+    Class="@_PopperClass"
+    Style="@_PopperStyle"
+    Context="PopperContext">
+    <Grow
+        RootRef="@PopperContext.RefBack"
+        Appear
+        In="@PopperContext.Open"
+        TransitionDuration="@TransitionDuration"
+        AppearTimeout="@AppearTimeout"
+        EnterTimeout="@EnterTimeout"
+        ExitTimeout="@ExitTimeout"
+        MountOnEnter="@MountOnEnter"
+        UnmountOnExit="@UnmountOnExit"
+        OnEnter="@PopperContext.OnEnter"
+        OnExited="@PopperContext.OnExited"
+        role="none presentation"
+        Context="GrowContext">
+        <div
+            @ref="@GrowContext.RefBack.Current"
+            class="@_TitleClass"
+            style="@_TitleStyle">
+            @if (HasTitleContent)
+            {
+                @TitleContent
+            }
+            else
+            {
+                @Title
+            }
+            @if (Arrow)
+            {
+                <span
+                    class="@_ArrowClass"
+                    style="@_ArrowStyle"
+                    data-popper-arrow>
+                </span>
+            }
+        </div>
+    </Grow>
+</Popper>

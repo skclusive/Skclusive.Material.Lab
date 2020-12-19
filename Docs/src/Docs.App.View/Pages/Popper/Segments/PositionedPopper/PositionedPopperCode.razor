@@ -1,0 +1,185 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    style=""width: 500px;"">
+    <Popper
+        Open=""@Open""
+        AnchorRef=""@AnchorRef""
+        Transition
+        Alignment=""@Alignment"">
+        <Fade
+            RootRef=""@context.RefBack""
+            OnEnter=""@context.OnEnter""
+            OnExited=""@context.OnExited""
+            In=""@context.Open""
+            Timeout=""350""
+            Context=""FadeContext"">
+            <Paper
+                RoofRef=""FadeContext.RefBack"">
+                <Typography
+                    Style=""padding: calc(var(--theme-spacing) * 2px);"">
+                    The content of the Popper.
+                </Typography>
+            </Paper>
+        </Fade>
+    </Popper>
+    <Grid
+        Container
+        Justify=""@Justify.Center"">
+        <Grid Item>
+            <Button
+                RootRef=""@TopStartAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.TopStart, TopStartAnchorRef))"">
+                TopStart
+            </Button>
+            <Button
+                RootRef=""@TopAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.Top, TopAnchorRef))"">
+                Top
+            </Button>
+            <Button
+                RootRef=""@TopEndAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.TopEnd, TopEndAnchorRef))"">
+                TopEnd
+            </Button>
+        </Grid>
+    </Grid>
+    <Grid
+        Container
+        Justify=""@Justify.Center"">
+        <Grid
+            Item
+            ExtraSmall=""@GridSize.Six"">
+            <Button
+                RootRef=""@LeftStartAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.LeftStart, LeftStartAnchorRef))"">
+                LeftStart
+            </Button>
+            <br />
+            <Button
+                RootRef=""@LeftAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.Left, LeftAnchorRef))"">
+                Left
+            </Button>
+            <br />
+            <Button
+                RootRef=""@LeftEndAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.LeftEnd, LeftEndAnchorRef))"">
+                LeftEnd
+            </Button>
+        </Grid>
+        <Grid
+            Item
+            Container
+            ExtraSmall=""@GridSize.Six""
+            AlignItems=""@AlignItems.FlexEnd""
+            Direction=""@Direction.Column"">
+            <Grid Item>
+                <Button
+                    RootRef=""@RightStartAnchorRef""
+                    OnClick=""@(CreateToggleHandler(Alignment.RightStart, RightStartAnchorRef))"">
+                    RightStart
+                </Button>
+            </Grid>
+            <Grid Item>
+                <Button
+                    RootRef=""@RightAnchorRef""
+                    OnClick=""@(CreateToggleHandler(Alignment.Right, RightAnchorRef))"">
+                    Right
+                </Button>
+            </Grid>
+            <Grid Item>
+                <Button
+                    RootRef=""@RightEndAnchorRef""
+                    OnClick=""@(CreateToggleHandler(Alignment.RightEnd, RightEndAnchorRef))"">
+                    RightEnd
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+    <Grid
+        Container
+        Justify=""@Justify.Center"">
+        <Grid Item>
+            <Button
+                RootRef=""@BottomStartAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.BottomStart, BottomStartAnchorRef))"">
+                BottomStart
+            </Button>
+            <Button
+                RootRef=""@BottomAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.Bottom, BottomAnchorRef))"">
+                Bottom
+            </Button>
+            <Button
+                RootRef=""@BottomEndAnchorRef""
+                OnClick=""@(CreateToggleHandler(Alignment.BottomEnd, BottomEndAnchorRef))"">
+                BottomEnd
+            </Button>
+        </Grid>
+    </Grid>
+</div>
+```
+
+```csharp
+@code
+{
+    private bool Open { set; get; }
+
+    private Alignment Alignment { set; get; }
+
+    private IReference AnchorRef { set; get; } = new Reference();
+
+    private IReference TopStartAnchorRef { set; get; } = new Reference();
+
+    private IReference TopAnchorRef { set; get; } = new Reference();
+
+    private IReference TopEndAnchorRef { set; get; } = new Reference();
+
+    private IReference LeftStartAnchorRef { set; get; } = new Reference();
+
+    private IReference LeftAnchorRef { set; get; } = new Reference();
+
+    private IReference LeftEndAnchorRef { set; get; } = new Reference();
+
+    private IReference RightStartAnchorRef { set; get; } = new Reference();
+
+    private IReference RightAnchorRef { set; get; } = new Reference();
+
+    private IReference RightEndAnchorRef { set; get; } = new Reference();
+
+    private IReference BottomStartAnchorRef { set; get; } = new Reference();
+
+    private IReference BottomAnchorRef { set; get; } = new Reference();
+
+    private IReference BottomEndAnchorRef { set; get; } = new Reference();
+
+    private Func<EventArgs, Task> CreateToggleHandler(Alignment alignment, IReference anchorRef)
+    {
+        return async (EventArgs args) =>
+        {
+            if (Alignment != alignment)
+            {
+                Alignment = alignment;
+
+                AnchorRef = anchorRef;
+
+                Open = true;
+            }
+            else
+            {
+                Open = !Open;
+            }
+
+            await InvokeAsync(StateHasChanged);
+        };
+    }
+}
+```
+")" />

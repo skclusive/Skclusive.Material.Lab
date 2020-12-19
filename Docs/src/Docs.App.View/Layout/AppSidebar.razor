@@ -1,0 +1,42 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<Navigation
+    Items="@Items"/>
+
+@code
+{
+    private static List<NavigationItem> Items = new List<NavigationItem>
+    {
+        new NavigationItem
+        {
+            Title = "Home",
+            Path = "",
+            Icon = @<HomeIcon />,
+            Prefix = false
+        },
+
+        new NavigationItem
+        {
+            Title = "Alert",
+            Path =  "alert",
+            Icon =  @<AlarmIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Popper",
+            Path =  "popper",
+            Icon =  @<TocIcon />,
+            Prefix =  true
+        },
+
+        new NavigationItem
+        {
+            Title = "Tooltip",
+            Path =  "tooltip",
+            Icon =  @<TocIcon />,
+            Prefix =  true
+        },
+    };
+}

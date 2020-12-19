@@ -1,0 +1,37 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Tooltip Installation
+
+if you want to use Tooltip alone follow the standalone installation. otherwise to use all components, [compound installation](./installation) can be followed.
+
+You can [install Tooltip package](https://www.nuget.org/packages/Skclusive.Material.Tooltip/) by typing the below command in your terminal:
+
+```csharp
+dotnet add package Skclusive.Material.Tooltip
+```
+
+Then, you can import it in your `_Imports.razor`.
+
+```csharp
+@using Skclusive.Material.Tooltip
+```
+
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
+
+```html
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddTooltipServices(new MaterialConfigBuilder().Build());
+```
+
+")" />

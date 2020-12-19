@@ -1,0 +1,21 @@
+﻿@namespace Skclusive.Material.Popper
+@inherits MaterialComponentBase
+
+@if (CanRender)
+{
+    <Portal
+        Disable="@DisablePortal"
+        TargetRef="@PortalTargetRef"
+        TargetBodyRef="@PortalTargetBodyRef"
+        Context="PortalContext">
+        <Component
+            data-mui-test="Popper"
+            Class="@_Class"
+            Style="@_Style"
+            OnClick="@HandleClick"
+            RootRef="@(new DelegateReference("PopperDelegateRef", RootRef, PortalContext.RefBack))"
+            @attributes="Attributes">
+            @ChildContent.Invoke(GetPopperContext(context))
+        </Component>
+    </Portal>
+}

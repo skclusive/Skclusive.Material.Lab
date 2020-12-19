@@ -1,0 +1,80 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits StyleComponentBase
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--theme-palette-background-default) !important;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.root {
+    height: 100%;
+    display: flex;
+    background-color: var(--theme-palette-background-default);
+}
+
+header.App-Topbar {
+    color: var(--theme-palette-background-custom-appbar-color);
+    background-color: var(--theme-palette-background-custom-appbar-background-color);
+}
+
+.App-Logo {
+    width: 36px;
+    height: 36px;
+}
+
+.App-Title {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.App-Body {
+    background-color: var(--theme-palette-background-custom-level1);
+}
+
+
+app, #app {
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+div.MainLayout-Root, div.MiniLayout-Root {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 0px;
+}
+
+main.MainLayout-Content {
+    height: auto;
+    overflow: auto;
+}
+
+div.MainLayout-ShiftContent header.App-Topbar {
+    margin-left: -250px;
+    width: calc(100% + 250px);
+}
+
+header.App-Topbar {
+    position: static;
+}

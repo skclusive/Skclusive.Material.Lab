@@ -1,0 +1,42 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Button
+        Variant=""@ButtonVariant.Contained""
+        OnClick=""@HandleToggle""
+        RootRef=""@AnchorRef"">
+        Toggle Popper
+    </Button>
+    <Popper
+        Open=""@Open""
+        AnchorRef=""@AnchorRef"">
+        <div
+            style=""padding: calc(var(--theme-spacing) * 2px);border: 1px solid;background-color: var(--theme-palette-background-paper);"">
+            The content of the Popper.
+        </div>
+    </Popper>
+</div>
+```
+
+```csharp
+@code
+{
+    private bool Open { set; get; }
+
+    private IReference AnchorRef { set; get; } = new Reference();
+
+    private void HandleToggle()
+    {
+        Open = !Open;
+
+        StateHasChanged();
+    }
+}
+```
+")" />

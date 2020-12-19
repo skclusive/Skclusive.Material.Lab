@@ -1,0 +1,42 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div>
+    <Button
+        Variant="@ButtonVariant.Contained"
+        OnClick="@HandleToggle"
+        RootRef="@AnchorRef">
+        Toggle Popper
+    </Button>
+    <Popper
+        Open="@Open"
+        AnchorRef="@AnchorRef"
+        Transition>
+        <Fade
+            RootRef="@context.RefBack"
+            OnEnter="@context.OnEnter"
+            OnExited="@context.OnExited"
+            In="@context.Open"
+            Timeout="350"
+            Context="FadeContext">
+            <div
+                @ref="FadeContext.RefBack.Current"
+                style="padding: calc(var(--theme-spacing) * 2px);border: 1px solid;background-color: var(--theme-palette-background-paper);">
+                The content of the Popper.
+            </div>
+        </Fade>
+    </Popper>
+</div>
+
+@code
+{
+    private bool Open { set; get; }
+
+    private IReference AnchorRef { set; get; } = new Reference();
+
+    private void HandleToggle()
+    {
+        Open = !Open;
+
+        StateHasChanged();
+    }
+}
