@@ -1,0 +1,28 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+But when it comes to other components, you may not want to repeat the width and
+height. In these instances, you can pass `children` and it will
+infer its width and height from them.
+
+```jsx
+@if (loading) {
+  <Skeleton Variant=""SkeletonVariant.Circle"">
+    <Avatar />
+  </Skeleton>
+ } else {
+  <Avatar Src=""@data.avatar"" />
+ }
+```
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <SkeletonInferChildrenDemo />
+    </ViewContent>
+    <CodeContent>
+        <SkeletonInferChildrenCode />
+    </CodeContent>
+</MarkdownDemo>

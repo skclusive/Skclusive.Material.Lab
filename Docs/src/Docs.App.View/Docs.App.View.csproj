@@ -14,7 +14,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Alert\src\Alert.csproj" />
+    <ProjectReference Include="..\..\..\Accordion\src\Accordion.csproj" />
     <ProjectReference Include="..\..\..\Popper\src\Popper.csproj" />
     <ProjectReference Include="..\..\..\Tooltip\src\Tooltip.csproj" />
+    <ProjectReference Include="..\..\..\Skeleton\src\Skeleton.csproj" />
   </ItemGroup>
 </Project>

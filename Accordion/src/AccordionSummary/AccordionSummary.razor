@@ -1,0 +1,30 @@
+﻿@namespace Skclusive.Material.Accordion
+@inherits MaterialComponent
+
+<ButtonBase
+    RootRef="@RootRef"
+    ChildRef="@ChildRef"
+    Class="@_Class"
+    Style="@_Style"
+    Component="@Component"
+    FocusRipple="false"
+    DisableRipple="true"
+    Disabled="@_Disabled"
+    OnClick="@HandleClickAsync"
+    OnClickStop="@OnClickStop"
+    OnClickPrevent="@OnClickPrevent"
+    @attributes="Attributes">
+    <div
+        class="@_ContentClass"
+        style="@_ContentStyle">
+        @ChildContent
+    </div>
+    @if (HasIconContent)
+    {
+        <div
+            class="@_IconClass"
+            style="@_IconStyle">
+            @IconContent
+        </div>
+    }
+</ButtonBase>

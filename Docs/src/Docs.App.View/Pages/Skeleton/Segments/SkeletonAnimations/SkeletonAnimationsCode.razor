@@ -1,0 +1,18 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div
+    style=""width: 300px;"">
+    <Skeleton />
+    <Skeleton
+        Animation=""@SkeletonAnimation.Wave"" />
+    <Skeleton
+        Animation=""@SkeletonAnimation.None"" />
+</div>
+```
+")" />

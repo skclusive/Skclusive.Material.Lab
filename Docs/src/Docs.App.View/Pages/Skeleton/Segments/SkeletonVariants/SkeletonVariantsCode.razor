@@ -1,0 +1,22 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<div>
+    <Skeleton
+        Variant=""@SkeletonVariant.Text"" />
+    <Skeleton
+        Variant=""@SkeletonVariant.Circle""
+        Width=""40""
+        Height=""40"" />
+    <Skeleton
+        Variant=""@SkeletonVariant.Rect""
+        Width=""210""
+        Height=""118"" />
+</div>
+```
+")" />

@@ -5,8 +5,10 @@ using Skclusive.Markdown.Component;
 using Skclusive.Material.Layout;
 using Skclusive.Material.Component;
 using Skclusive.Material.Alert;
+using Skclusive.Material.Accordion;
 using Skclusive.Material.Popper;
 using Skclusive.Material.Tooltip;
+using Skclusive.Material.Skeleton;
 using Skclusive.Material.Theme;
 
 namespace Skclusive.Material.Docs.App.View
@@ -21,9 +23,13 @@ namespace Skclusive.Material.Docs.App.View
 
             services.TryAddAlertServices(config);
 
+            services.TryAddAccordionServices(config);
+
             services.TryAddPopperServices(config);
 
             services.TryAddTooltipServices(config);
+
+            services.TryAddSkeletonServices(config);
 
             services.TryAddMaterialServices(config);
 

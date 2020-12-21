@@ -1,0 +1,37 @@
+﻿@namespace Skclusive.Material.Accordion
+@inherits MaterialComponent
+
+<Paper
+    RootRef="@RootRef"
+    Component="@Component"
+    Class="@_Class"
+    Style="@_Style"
+    Square="@Square"
+    Elevation="@Elevation"
+    OnClick="@HandleClickAsync"
+    OnClickStop="@OnClickStop"
+    OnClickPrevent="@OnClickPrevent"
+    @attributes="Attributes">
+    <CascadingValue
+        Value="AccordionContext">
+        @SummaryContent
+    </CascadingValue>
+    <Collapse
+        Appear
+        In="@Expanded"
+        TransitionDuration="@TransitionDuration"
+        AppearTimeout="@AppearTimeout"
+        EnterTimeout="@EnterTimeout"
+        ExitTimeout="@ExitTimeout"
+        MountOnEnter="@MountOnEnter"
+        UnmountOnExit="@UnmountOnExit">
+        <div
+            aria-labelledby="@SummaryId"
+            id="@ControlsId"
+            role="region"
+            class="@_RegionClass"
+            style="@_RegionStyle">
+            @ChildContent
+        </div>
+    </Collapse>
+</Paper>

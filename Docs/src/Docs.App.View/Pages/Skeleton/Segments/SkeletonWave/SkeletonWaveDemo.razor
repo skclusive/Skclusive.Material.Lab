@@ -1,0 +1,75 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<Box
+    Overflow="@Overflow.Hidden">
+    <Card
+        Style="max-width: 345px; margin: calc(var(--theme-spacing) * 2px);">
+        <CardHeader>
+            <AvatarContent>
+                <Skeleton
+                    Animation="@SkeletonAnimation.Wave"
+                    Variant="@SkeletonVariant.Circle"
+                    Width="40"
+                    Height="40" />
+            </AvatarContent>
+            <TitleContent>
+                <Skeleton
+                    Animation="@SkeletonAnimation.Wave"
+                    Width="80%"
+                    Height="10"
+                    Style="margin-bottom: 6px;" />
+            </TitleContent>
+            <SubHeaderContent>
+                <Skeleton
+                    Animation="@SkeletonAnimation.Wave"
+                    Width="40%"
+                    Height="10" />
+            </SubHeaderContent>
+        </CardHeader>
+        <Skeleton
+            Animation="@SkeletonAnimation.Wave"
+            Variant="@SkeletonVariant.Rect"
+            Height="190" />
+        <CardContent>
+            <Skeleton
+                Animation="@SkeletonAnimation.Wave"
+                Height="10"
+                Style="margin-bottom: 6px;" />
+            <Skeleton
+                Animation="@SkeletonAnimation.Wave"
+                Width="80%"
+                Height="10" />
+        </CardContent>
+    </Card>
+    <Card
+        Style="max-width: 345px; margin: calc(var(--theme-spacing) * 2px);">
+        <CardHeader
+            Title="Ted"
+            Subheader="5 hours ago">
+            <AvatarContent>
+                <Avatar
+                    aria-label="Ted talk"
+                    Alt="Ted talk"
+                    Src="https://pbs.twimg.com/profile_images/877631054525472768/Xp5FAPD5_reasonably_small.jpg" />
+            </AvatarContent>
+            <ActionContent>
+                <IconButton
+                    aria-label="settings">
+                    <MoreVertIcon />
+                </IconButton>
+            </ActionContent>
+        </CardHeader>
+        <CardMedia
+            Style="height: 190px;"
+            Title="Ted talk"
+            Image="https://pi.tedcdn.com/r/talkstar-photos.s3.amazonaws.com/uploads/72bda89f-9bbf-4685-910a-2f151c4f3a8a/NicolaSturgeon_2019T-embed.jpg?w=512" />
+        <CardContent>
+            <Typography
+                Variant="@TypographyVariant.Body2"
+                Color="@Color.TextSecondary"
+                Component="p">
+                Why First Minister of Scotland Nicola Sturgeon thinks GDP is the wrong measure of a country's success:
+            </Typography>
+        </CardContent>
+    </Card>
+</Box>

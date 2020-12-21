@@ -1,0 +1,30 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+## Inferring dimensions
+
+In addition to accepting `width` and `height` props, the component can also infer the dimensions.
+
+It works well when it comes to typography as its height is set using `em` units.
+
+```jsx
+<Typography Variant=""@TypographyVariant.H1"">
+    @if(loading) {
+        <Skeleton />
+    } else {
+        @TypographyVariant.H1
+    }
+</Typography>
+```
+
+")" />
+
+<MarkdownDemo>
+    <ViewContent>
+        <SkeletonTypographyDemo />
+    </ViewContent>
+    <CodeContent>
+        <SkeletonTypographyCode />
+    </CodeContent>
+</MarkdownDemo>

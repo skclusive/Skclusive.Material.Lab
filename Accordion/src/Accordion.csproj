@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <VersionPrefix>5.2.0</VersionPrefix>
+    <VersionSuffix>$(VersionSuffix)</VersionSuffix>
+    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
+    <RazorLangVersion>3.0</RazorLangVersion>
+    <AssemblyName>Skclusive.Material.Accordion</AssemblyName>
+    <PackageId>Skclusive.Material.Accordion</PackageId>
+    <RootNamespace>Skclusive.Material.Accordion</RootNamespace>
+    <Authors>Skclusive</Authors>
+    <Company>Skclusive</Company>
+    <Copyright>Skclusive</Copyright>
+    <PackageTags>blazor material ui Accordion</PackageTags>
+    <PackageProjectUrl>https://github.com/skclusive/Skclusive.Material.Lab</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/skclusive/Skclusive.Material.Lab</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Skclusive.Material.Paper" Version="5.2.0" />
+    <PackageReference Include="Skclusive.Material.Button" Version="5.2.0" />
+    <PackageReference Include="Skclusive.Material.Transition" Version="5.2.0" />
+  </ItemGroup>
+
+</Project>

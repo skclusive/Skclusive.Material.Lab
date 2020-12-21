@@ -1,0 +1,37 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Accordion Installation
+
+if you want to use Accordion alone follow the standalone installation. otherwise to use all components, [compound installation](./installation) can be followed.
+
+You can [install Accordion package](https://www.nuget.org/packages/Skclusive.Material.Accordion/) by typing the below command in your terminal:
+
+```csharp
+dotnet add package Skclusive.Material.Accordion
+```
+
+Then, you can import it in your `_Imports.razor`.
+
+```csharp
+@using Skclusive.Material.Accordion
+```
+
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
+
+```html
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddAccordionServices(new MaterialConfigBuilder().Build());
+```
+
+")" />

@@ -1,0 +1,44 @@
+@namespace Skclusive.Material.Docs.App.View
+@inherits MaterialComponentBase
+
+<MarkdownCode
+    Class="@_Class"
+    Style="@_Style"
+    Text="@(@"
+```html
+<Grid
+    Container
+    Spacing=""@Spacing.Eight"">
+    <Grid
+        Item
+        ExtraSmall=""@GridSize.True"">
+        <div>
+            @foreach (var variant in new [] { TypographyVariant.H1, TypographyVariant.H3, TypographyVariant.Body1, TypographyVariant.Caption })
+            {
+                <Typography
+                    @key=""@variant""
+                    Component=""div""
+                    Variant=""@variant"">
+                    <Skeleton />
+                </Typography>
+            }
+        </div>
+    </Grid>
+    <Grid
+        Item
+        ExtraSmall=""@GridSize.True"">
+        <div>
+            @foreach (var variant in new [] { TypographyVariant.H1, TypographyVariant.H3, TypographyVariant.Body1, TypographyVariant.Caption })
+            {
+                <Typography
+                    @key=""@variant""
+                    Component=""div""
+                    Variant=""@variant"">
+                    @variant
+                </Typography>
+            }
+        </div>
+    </Grid>
+</Grid>
+```
+")" />

@@ -1,0 +1,37 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<MarkdownSegment
+    Text="@(@"
+# Skeleton Installation
+
+if you want to use Skeleton alone follow the standalone installation. otherwise to use all components, [compound installation](./installation) can be followed.
+
+You can [install Skeleton package](https://www.nuget.org/packages/Skclusive.Material.Skeleton/) by typing the below command in your terminal:
+
+```csharp
+dotnet add package Skclusive.Material.Skeleton
+```
+
+Then, you can import it in your `_Imports.razor`.
+
+```csharp
+@using Skclusive.Material.Skeleton
+```
+
+Then in your `App.razor`, add `ThemeProvider` wrapping Router.
+
+```html
+<ThemeProvider>
+    <Router AppAssembly=""@typeof(Program).Assembly"">
+        ...
+    </Router>
+</ThemeProvider>
+```
+
+Then in your `services (ServiceCollection)` add below service.
+
+```csharp
+services.TryAddSkeletonServices(new MaterialConfigBuilder().Build());
+```
+
+")" />

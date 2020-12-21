@@ -1,0 +1,82 @@
+﻿@namespace Skclusive.Material.Skeleton
+@inherits StyleComponentBase
+
+.Skeleton-Root {
+  height: 1.2em;
+  display: block;
+  background-color: var(--theme-component-skeleton-background);
+}
+
+.Skeleton-Variant-Text {
+  height: auto;
+  transform: scale(1, 0.60);
+  margin-top: 0;
+  border-radius: var(--theme-component-skeleton-text-border-radius);
+  margin-bottom: 0;
+  transform-origin: 0 60%;
+}
+
+.Skeleton-Variant-Text:empty:before {
+  content: "\00a0";
+}
+
+.Skeleton-Variant-Circle {
+  border-radius: 50%;
+}
+
+.Skeleton-Animation-Pulse {
+  animation: Skeleton-keyframes-pulse 1.5s ease-in-out 0.5s infinite;
+}
+
+@keyframes Skeleton-keyframes-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.Skeleton-Animation-Wave {
+  overflow: hidden;
+  position: relative;
+}
+
+.Skeleton-Animation-Wave::after {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+  animation: Skeleton-keyframes-wave 1.6s linear 0.5s infinite;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, var(--theme-palette-action-hover), transparent);
+}
+
+@keyframes Skeleton-keyframes-wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.Skeleton-With-Children > * {
+  visibility: hidden;
+}
+
+.Skeleton-Fit-Content {
+  max-width: fit-content;
+}
+
+.Skeleton-Height-Auto {
+  height: auto;
+}

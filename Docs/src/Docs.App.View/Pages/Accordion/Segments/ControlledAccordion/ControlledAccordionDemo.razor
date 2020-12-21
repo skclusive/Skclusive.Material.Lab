@@ -1,0 +1,133 @@
+@namespace Skclusive.Material.Docs.App.View
+
+<div
+    style="width: 100%;">
+    <Accordion
+        Expanded="@(Expanded == "Accordion1")"
+        OnChange="@CreateToggleHandler("Accordion1")">
+        <SummaryContent>
+            <AccordionSummary>
+                <IconContent>
+                    <ExpandMoreIcon />
+                </IconContent>
+                <ChildContent>
+                    <Typography
+                        Style="font-size: 0.9375rem; flex-basis: 33.33%; flex-shrink: 0;">
+                        General settings
+                    </Typography>
+                    <Typography
+                        Style="color: var(--theme-palette-text-secondary); font-size: 0.9375rem;">
+                        I am an accordion
+                    </Typography>
+                </ChildContent>
+            </AccordionSummary>
+        </SummaryContent>
+        <ChildContent>
+            <AccordionDetails>
+                <Typography>
+                Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat.
+                Aliquam eget maximus est, id dignissim quam.
+                </Typography>
+            </AccordionDetails>
+        </ChildContent>
+    </Accordion>
+    <Accordion
+        Expanded="@(Expanded == "Accordion2")"
+        OnChange="@CreateToggleHandler("Accordion2")">
+        <SummaryContent>
+            <AccordionSummary>
+                <IconContent>
+                    <ExpandMoreIcon />
+                </IconContent>
+                <ChildContent>
+                    <Typography
+                        Style="font-size: 0.9375rem; flex-basis: 33.33%; flex-shrink: 0;">
+                        Users
+                    </Typography>
+                    <Typography
+                        Style="color: var(--theme-palette-text-secondary); font-size: 0.9375rem;">
+                        You are currently not an owner
+                    </Typography>
+                </ChildContent>
+            </AccordionSummary>
+        </SummaryContent>
+        <ChildContent>
+            <AccordionDetails>
+                <Typography>
+                Donec placerat, lectus sed mattis semper, neque lectus feugiat
+      lectus, varius pulvinar diam eros in elit. Pellentesque convallis
+      laoreet laoreet.
+                </Typography>
+            </AccordionDetails>
+        </ChildContent>
+    </Accordion>
+    <Accordion
+        Expanded="@(Expanded == "Accordion3")"
+        OnChange="@CreateToggleHandler("Accordion3")">
+        <SummaryContent>
+            <AccordionSummary>
+                <IconContent>
+                    <ExpandMoreIcon />
+                </IconContent>
+                <ChildContent>
+                    <Typography
+                        Style="font-size: 0.9375rem; flex-basis: 33.33%; flex-shrink: 0;">
+                        Advanced settings
+                    </Typography>
+                    <Typography
+                        Style="color: var(--theme-palette-text-secondary); font-size: 0.9375rem;">
+                        Filtering has been entirely disabled for whole web server
+                    </Typography>
+                </ChildContent>
+            </AccordionSummary>
+        </SummaryContent>
+        <ChildContent>
+            <AccordionDetails>
+                <Typography>
+                Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
+      sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+                </Typography>
+            </AccordionDetails>
+        </ChildContent>
+    </Accordion>
+    <Accordion
+        Expanded="@(Expanded == "Accordion4")"
+        OnChange="@CreateToggleHandler("Accordion4")">
+        <SummaryContent>
+            <AccordionSummary>
+                <IconContent>
+                    <ExpandMoreIcon />
+                </IconContent>
+                <ChildContent>
+                    <Typography
+                        Style="font-size: 0.9375rem; flex-basis: 33.33%; flex-shrink: 0;">
+                        Personal data
+                    </Typography>
+                </ChildContent>
+            </AccordionSummary>
+        </SummaryContent>
+        <ChildContent>
+            <AccordionDetails>
+                <Typography>
+                Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer
+      sit amet egestas eros, vitae egestas augue. Duis vel est augue.
+                </Typography>
+            </AccordionDetails>
+        </ChildContent>
+    </Accordion>
+</div>
+
+@code
+{
+    private string Expanded { set; get; }
+
+    private Func<bool, Task> CreateToggleHandler(string panelId)
+    {
+        return async (bool expanded) =>
+        {
+            Expanded = expanded ? panelId : null;
+
+            await InvokeAsync(StateHasChanged);
+        };
+    }
+}
